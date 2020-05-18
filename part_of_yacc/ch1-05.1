@@ -1,0 +1,23 @@
+%{
+/*
+ * We now build a lexical analyzer to be used by a higher-level parser
+ */
+
+#include "y.tab.h"
+
+#define LOOKUP 0
+
+int statel
+
+%}
+
+%%
+
+\n	{ state = LOOKUP; }
+
+\.\n	{ 
+		state = LOOKUP;
+	  	return 0;
+	}
+
+
